@@ -1,0 +1,30 @@
+# Source files
+src/
+App.tsx
+main.tsx
+index.html
+index.css
+
+# Config files
+vite.config.ts
+tsconfig.json
+tsconfig.node.json
+tailwind.config.ts
+
+# Build artifacts
+node_modules/
+.vite/
+
+# IDE
+.vscode/
+.idea/
+
+# Git
+.git/
+.gitignore
+
+# Misc
+*.log
+.DS_Store
+bg1.jpg
+turtle_body1.png

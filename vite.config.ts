@@ -1,12 +1,19 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
+import dts from 'vite-plugin-dts';
 
 export default defineConfig(({ mode }) => {
   if (mode === 'lib') {
     // Library build configuration
     return {
-      plugins: [react()],
+      plugins: [
+        react(),
+        dts({
+          include: ['src/**/*.ts', 'src/**/*.tsx'],
+          outDir: 'dist',
+        }),
+      ],
       build: {
         lib: {
           entry: './src/index.ts',
@@ -15,11 +22,12 @@ export default defineConfig(({ mode }) => {
           formats: ['es'],
         },
         rollupOptions: {
-          external: ['react', 'react-dom', 'framer-motion'],
+          external: ['react', 'react-dom', 'react/jsx-runtime', 'framer-motion'],
           output: {
             globals: {
               react: 'React',
               'react-dom': 'ReactDOM',
+              'react/jsx-runtime': 'react/jsx-runtime',
               'framer-motion': 'FramerMotion',
             },
             assetFileNames: (assetInfo) => {

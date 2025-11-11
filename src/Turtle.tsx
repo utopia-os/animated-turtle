@@ -41,26 +41,31 @@ export const Turtle = ({
   // Calculate durations based on animation speed
   const headDuration = 5 / animationSpeed;
   const finDuration = 3.2 / animationSpeed;
-  const backFinDuration = 2.9 / animationSpeed;
 
   return (
     <div
-      className={`relative w-[720px] h-[520px] ${className}`}
+      className={className}
       style={{
+        position: 'relative',
+        width: '720px',
+        height: '520px',
         transform: `scale(${scale})`,
         transformOrigin: 'top left',
       }}
     >
       {/* Left Fin - animated (behind body) */}
       <motion.img
-        className="absolute left-[490px] top-[300px] w-[140px]"
         style={{
-          transformOrigin: '30px 30px'
+          position: 'absolute',
+          left: '480px',
+          top: '310px',
+          width: '140px',
+          transformOrigin: '50px 40px'
         }}
         src={turtleImages.flipperLeft}
         alt="Left fin"
         animate={{
-          rotate: [-35, -30, -35],
+          rotate: [-40, -50, -40],
         }}
         transition={{
           duration: finDuration,
@@ -71,24 +76,32 @@ export const Turtle = ({
 
       {/* Body - static (middle layer) */}
       <img
-        className="absolute left-[40px] top-[40px] w-[620px]"
+        style={{
+          position: 'absolute',
+          left: '40px',
+          top: '40px',
+          width: '620px'
+        }}
         src={turtleImages.body}
         alt="Body"
       />
 
       {/* Back Fin - animated */}
       <motion.img
-        className="absolute left-0 top-[495px] w-[200px]"
         style={{
-          transformOrigin: '200px 10px'
+          position: 'absolute',
+          left: '0px',
+          top: '500px',
+          width: '200px',
+          transformOrigin: '180px 0px'
         }}
         src={turtleImages.flipperBack}
         alt="Back fin"
         animate={{
-          rotate: [-6, 0, -6],
+          rotate: [-3, 4, -3],
         }}
         transition={{
-          duration: backFinDuration,
+          duration: finDuration,
           ease: 'easeInOut',
           repeat: Infinity,
         }}
@@ -96,18 +109,21 @@ export const Turtle = ({
 
       {/* Right Fin - animated (in front of body) */}
       <motion.img
-        className="absolute left-[200px] top-[365px] w-[230px]"
         style={{
-          transformOrigin: '200px 25px'
+          position: 'absolute',
+          left: '200px',
+          top: '365px',
+          width: '230px',
+          transformOrigin: '200px 30px'
         }}
         src={turtleImages.flipperRight}
         alt="Right fin"
         animate={{
-          rotate: [2, -3, 2],
+          rotate: [7, -9, 7],
         }}
         transition={{
           duration: finDuration,
-          delay: 0.7,
+          delay: 0.2,
           ease: 'easeInOut',
           repeat: Infinity,
         }}
@@ -115,15 +131,18 @@ export const Turtle = ({
 
       {/* Head - animated (on top) */}
       <motion.img
-        className="absolute left-[420px] top-[45px] w-[230px]"
         style={{
+          position: 'absolute',
+          left: '420px',
+          top: '25px',
+          width: '250px',
           transformOrigin: '40px 190px'
         }}
         src={turtleImages.head}
         alt="Head"
         animate={{
-          rotate: [1, 5, 1],
-          translateY: [0, -4, 0],
+          rotate: [-3, 0, -3],
+          translateY: [0, -2, 0],
         }}
         transition={{
           duration: headDuration,
