@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { margin: 0; padding: 20px; background: #1a1a2e; color: white; }
+    .fish {
+      position: fixed;
+      width: 60px;
+      height: 36px;
+      background: orange;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <h2>Fish Test - Check Browser Console</h2>
+  <div id="info"></div>
+  <script>
+    const screenWidth = window.innerWidth;
+    const offset = 110; // 60px fish + 50px
+    const offScreenRight = 5000;
+    
+    console.log('Screen width:', screenWidth);
+    console.log('Offset:', offset);
+    console.log('offScreenRight:', offScreenRight);
+    console.log('Fish starting right (startX):', -offset);
+    console.log('Fish ending right (endX):', offScreenRight);
+    console.log('Fish starting left (startX):', offScreenRight, '- WAY OFF SCREEN!');
+    console.log('Fish ending left (endX):', -offset);
+    
+    document.getElementById('info').innerHTML = `
+      Screen width: ${screenWidth}px<br>
+      <br>
+      Fish direction="right":<br>
+      - Starts at: ${-offset}px (left of screen)<br>
+      - Ends at: ${offScreenRight}px (FAR right of screen)<br>
+      <br>
+      Fish direction="left":<br>
+      - Starts at: ${offScreenRight}px ⚠️ THIS IS ${offScreenRight - screenWidth}px BEYOND THE SCREEN!<br>
+      - Ends at: ${-offset}px (left of screen)<br>
+      <br>
+      <strong>Problem: Fish starting at 5000px are too far away!</strong>
+    `;
+  </script>
+</body>
+</html>
