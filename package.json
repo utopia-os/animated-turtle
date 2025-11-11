@@ -1,5 +1,5 @@
 {
-  "name": "@your-username/turtle-animation",
+  "name": "@ttanton/animated-turtle",
   "version": "1.0.0",
   "description": "Animated turtle component for React with framer-motion",
   "type": "module",
@@ -31,11 +31,14 @@
     "framer-motion",
     "component"
   ],
-  "author": "Your Name",
+  "author": "Anton Tranelis",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/turtle-animation"
+    "url": "https://github.com/utopia-os/animated-turtle"
   },
   "peerDependencies": {
     "framer-motion": "^12.0.0",

@@ -1,11 +1,14 @@
-# 🐢 Turtle Animation
+# 🐢 Animated Turtle
 
 Eine animierte React-Komponente einer Schildkröte, gebaut mit Framer Motion.
+
+[![npm version](https://badge.fury.io/js/@ttanton%2Fanimated-turtle.svg)](https://www.npmjs.com/package/@ttanton/animated-turtle)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Installation
 
 ```bash
-npm install @your-username/turtle-animation
+npm install @ttanton/animated-turtle
 ```
 
 ## Peer Dependencies
@@ -21,7 +24,7 @@ npm install react react-dom framer-motion
 ### Einfaches Beispiel
 
 ```tsx
-import { Turtle } from '@your-username/turtle-animation';
+import { Turtle } from '@ttanton/animated-turtle';
 
 function App() {
   return (
@@ -40,7 +43,7 @@ function App() {
 ### Mit eigenen Bildern
 
 ```tsx
-import { Turtle } from '@your-username/turtle-animation';
+import { Turtle } from '@ttanton/animated-turtle';
 
 function App() {
   return (
@@ -60,7 +63,7 @@ function App() {
 ### Anpassung der Animation
 
 ```tsx
-import { Turtle } from '@your-username/turtle-animation';
+import { Turtle } from '@ttanton/animated-turtle';
 
 function App() {
   return (
@@ -117,10 +120,15 @@ npm run build:lib
 npm run prepublishOnly
 ```
 
+## Links
+
+- [npm Package](https://www.npmjs.com/package/@ttanton/animated-turtle)
+- [GitHub Repository](https://github.com/utopia-os/animated-turtle)
+
 ## Lizenz
 
 MIT
 
 ## Autor
 
-Your Name
+Anton Tranelis
