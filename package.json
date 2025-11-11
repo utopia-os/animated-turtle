@@ -1,6 +1,6 @@
 {
   "name": "@ttanton/animated-turtle",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Animated turtle component for React with framer-motion",
   "type": "module",
   "main": "./dist/index.js",
