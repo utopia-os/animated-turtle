@@ -50,7 +50,7 @@ export const Turtle = ({
         width: '720px',
         height: '520px',
         transform: `scale(${scale})`,
-        transformOrigin: 'top left',
+        transformOrigin: 'center',
       }}
     >
       {/* Left Fin - animated (behind body) */}

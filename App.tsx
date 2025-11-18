@@ -2,8 +2,22 @@ import { Turtle } from './src/Turtle';
 import { Fish } from './src/Fish';
 import { Bubbles } from './src/Bubbles';
 import bg1 from './bg1.jpg';
+import { useState, useEffect } from 'react';
 
 function App() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const turtleScale = isMobile ? 0.3 : 0.6;
+
   return (
     <div style={{
       position: 'relative',
@@ -68,22 +82,22 @@ function App() {
 
       {/* Bubbles in the background - left side */}
       <div style={{ position: 'absolute', left: '5%', bottom: 0, zIndex: 1 }}>
-        <Bubbles count={5} height={800} width={150} />
+        <Bubbles count={5} height={window.innerHeight} width={window.innerWidth} />
       </div>
 
       {/* Bubbles in the background - center left */}
       <div style={{ position: 'absolute', left: '20%', bottom: 0, zIndex: 1 }}>
-        <Bubbles count={3} height={600} width={500} color="rgba(173, 216, 230, 0.5)" />
+        <Bubbles count={3} height={window.innerHeight} width={window.innerWidth} color="rgba(173, 216, 230, 0.5)" />
       </div>
 
       {/* Bubbles in the background - right side */}
       <div style={{ position: 'absolute', right: '5%', bottom: 0, zIndex: 1 }}>
-        <Bubbles count={7} height={700} width={120} color="rgba(200, 230, 255, 0.6)" />
+        <Bubbles count={7} height={window.innerHeight} width={window.innerWidth} color="rgba(200, 230, 255, 0.6)" />
       </div>
 
       {/* Bubbles in the background - center right */}
       <div style={{ position: 'absolute', right: '20%', bottom: 0, zIndex: 1 }}>
-        <Bubbles count={8} height={500} width={280} maxSize={12} />
+        <Bubbles count={8} height={window.innerHeight} width={window.innerWidth} maxSize={12} />
       </div>
 
       {/* Turtle in the center */}
@@ -91,7 +105,7 @@ function App() {
         position: 'relative',
         zIndex: 2,
       }}>
-        <Turtle scale={0.6} />
+        <Turtle scale={turtleScale} />
       </div>
     </div>
   );
