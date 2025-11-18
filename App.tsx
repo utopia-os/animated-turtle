@@ -1,6 +1,7 @@
 import { Turtle } from './src/Turtle';
 import { Fish } from './src/Fish';
 import { Bubbles } from './src/Bubbles';
+import bg1 from './bg1.jpg';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       alignItems: 'center',
       justifyContent: 'center',
       minHeight: '100vh',
-      backgroundImage: 'url(bg1.jpg)',
+      backgroundImage: `url(${bg1})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
