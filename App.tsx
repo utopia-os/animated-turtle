@@ -16,7 +16,7 @@ function App() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const turtleScale = isMobile ? 0.3 : 0.6;
+  const turtleScale = isMobile ? 0.4 : 0.6;
 
   return (
     <div style={{
