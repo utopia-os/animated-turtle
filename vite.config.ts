@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import dts from 'vite-plugin-dts';
 
-export default defineConfig(({ mode }) => {
+export default defineConfig(({ mode, command }) => {
   if (mode === 'lib') {
     // Library build configuration
     return {
@@ -47,5 +47,6 @@ export default defineConfig(({ mode }) => {
   // Development build configuration
   return {
     plugins: [react(), tailwindcss()],
+    base: command === 'build' ? '/animated-turtle/' : '/',
   };
 });
