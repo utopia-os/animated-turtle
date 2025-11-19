@@ -1,7 +1,7 @@
 import { Turtle } from './src/Turtle';
 import { Fish } from './src/Fish';
 import { Bubbles } from './src/Bubbles';
-import bg1 from './bg1.jpg';
+import bg from './bg2.png';
 import { useState, useEffect } from 'react';
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
       alignItems: 'center',
       justifyContent: 'center',
       minHeight: '100vh',
-      backgroundImage: `url(${bg1})`,
+      backgroundImage: `url(${bg})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
